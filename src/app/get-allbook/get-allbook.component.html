@@ -1,0 +1,90 @@
+<div class="container">
+
+  <form (ngSubmit)="searchText(searchItem)" class="input-group md-form form-sm form-2 pl-0">
+    <input style="margin-top:40px;" class="form-control lime-border" type="text" [(ngModel)]="searchItem" name="searchItem"
+      placeholder="Search" aria-label="Search">
+    <i style="margin-top:40px;" class="fas fa-search" aria-hidden="true"></i>
+  </form>
+
+  <table mdbTable class="bookTable">
+    <thead class="bookTableHearder">
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+      </tr>
+    </thead>
+    <tbody class="bookTableBody">
+
+      <tr *ngFor="let el of elements | bookfilter : searchItem ; ">
+        <td  scope="row">{{el.id}}</td>
+        <td >{{el.authorName}}
+          <tr>
+            <a type="btn"> <i  (click)="likeBtnClick(el.id,el.likes)"     style="margin-top:20px; margin-left: 20px;"  [style.color]="iconColorLike"  class="fa fa-thumbs-up"></i></a>
+            <a type="btn"> <i  (click)="dislikeBtnClick(el.id)"  style="margin-top:20px; margin-left: 50px;"  [style.color]="iconColorDisLike"  class="fa fa-thumbs-down"></i></a>
+          </tr>
+          <tr>
+              <i style="margin-top:30px; margin-left: 10px;">{{el.likes}}</i>
+              <i style="margin-top:30px; margin-left: 50px;">{{el.dislikes}}</i>
+          </tr>
+        
+        </td>
+        <td >{{el.bookName}}</td>
+        <td >{{el.publishDate}}</td>
+        <td >
+          <button type="button" (click)="deleteBook(el.id)"       class="btn tabletbn">Delete</button>
+          <button type="button" (click)="updateBookrecord(el.id)" class="btn tabletbn">Update</button>
+          <button type="button" (click)="viewBookrecord(el.id)"   class="btn tabletbn">View</button>
+        </td>
+      </tr>
+    </tbody> 
+
+    <tfoot class="bookTableFooter">
+      <tr>
+        <td colspan="5">
+            <ul class="pagination" style="margin-left:475px;">
+                <li class="page-item"><button class="page-link" [disabled]="!disablePreviousbtn()" (click)="getPreviousRecord(pageLimit,pageOffset)" >Previous</button></li>
+                <li class="page-item"><button class="page-link" [disabled]="!disableNextbtn()" (click)="getNextRecord(pageLimit,pageOffset)">Next</button></li>
+            </ul>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <button type="button" (click)="addBook()" class="btn btn-block addBookbtn">Add Your Book</button>
+
+</div> 
+ 
+
+
+<!-- 
+<simple-modal elementId="searchResult" title="Matching Data">
+      <div class="list-group">
+        <a class="list-group-item" *ngFor="let el of searchData">
+          {{el.authorName}}
+        </a>
+      </div>
+</simple-modal>  -->
+
+
+<!-- <form (ngSubmit)="searchText(searchItem)" class="input-group md-form form-sm form-2 pl-0">
+    <input class="form-control lime-border"  type="text" [(ngModel)]="searchItem" name="searchItem" placeholder="Search" aria-label="Search">
+    <div class="input-group-append">
+       <button class="input-group-text btn waves-effect"  data-toggle="modal" data-target="#searchModal" style="background-color:#ecb535; color: black;" >search</button>
+    </div>
+ </form> 
+
+
+<div class="modal" id="searchModal"  tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Matching Result</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngFor="let el of searchData">
+            <a [routerLink]="['/viewrecord', el.id]">  {{el.authorName}}   </a>   
+        </div>
+      </div>
+    </div>
+  </div>  -->

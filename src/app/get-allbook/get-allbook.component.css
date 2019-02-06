@@ -1,0 +1,72 @@
+.container{
+    margin-top: 50px;
+}
+.addBookbtn{
+    margin-top: 35px;
+    margin-bottom: 20px;
+    background-color:#ecb535;
+    color: black;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a:hover{
+   text-decoration: none;
+}
+.tabletbn{
+    background-color:#ecb535;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bookTable{
+    background-color:#e9ab18;
+    color: black;
+    margin-top: 35px;
+}
+.bookTable .bookTableHearder{
+    background-color:#ecb535;
+    color: black;
+}
+.bookTable .bookTableFooter{
+    background-color:#ecb535;
+    color: black;
+}
+.bookTableHearder > tr > th{
+    text-align:center;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bookTableBody > tr > td{
+    text-align:center;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bookTableFooter > tr > td{
+    text-align:center;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-content{
+    margin-top:55px; 
+    top:55px; 
+    position: absolute;
+    width: 180%!important;
+    margin-left: -30%!important;
+}
+.modal-title{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.modal-body a{
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-backdrop {
+  display: none;
+}
+
+.modal {
+  background: rgba(0,0,0,0.1);
+}

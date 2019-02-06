@@ -1,0 +1,33 @@
+<div class="container">
+
+    <mdb-card class="text-white mb-3" bgColor="bg-dark" *ngFor="let el of bookRecord" style="width: 850px; height: 550px;   margin-left: 150px;">
+        <mdb-card-header><h2>{{el.bookName}}</h2></mdb-card-header>
+        <mdb-card-body style="width: 850px; height: 550px;">
+          <div class="row">
+            <div class="col-sm-6">
+                <img class="img-fluid" alt="Sample image with waves effect" src="{{el.bookCoverImg}}" alt="abc">
+            </div>
+            <div class="col-sm-6" style="margin-top:35px;">
+                <mdb-card-title>
+                    <h5>  Written by :     </h5> 
+                    <h6> {{el.authorName}} </h6>
+                </mdb-card-title>
+                <mdb-card-title>
+                    <h5>  Publish Date :    </h5>
+                    <h6> {{el.publishDate}} </h6>
+                </mdb-card-title>
+                <mdb-card-text class="text-white">
+                  <h5> Description :  </h5> 
+                  <p> Some quick example text to build on the panel title and make up the bulk of the panel's content.
+                    Commonly that's the way you may add just a handful of easy classes to get from standard images a responsive ones 
+                    utilizing the most recent build of one of the most prominent framework for setting up mobile friendly web pages.
+                     Now all that is simply left for you is discovering the suitable ones.
+                  </p>
+
+                </mdb-card-text>
+            </div>
+          </div>
+        </mdb-card-body>
+    </mdb-card>
+
+</div>
